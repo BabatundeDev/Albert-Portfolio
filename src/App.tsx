@@ -15,6 +15,9 @@ import {
   Zap,
   Code2,
   BookOpen,
+  Brain,
+  Code,
+  Map,
 } from "lucide-react";
 
 /* ─── Global injected keyframes ─── */
@@ -102,15 +105,6 @@ function useCounter(target: number, active: boolean, duration = 1800) {
 const CG: React.CSSProperties = { fontFamily: "'Cormorant Garamond', Georgia, serif" };
 const DM: React.CSSProperties = { fontFamily: "'DM Sans', system-ui, sans-serif" };
 
-/* ─── Brand SVG Icons ─── */
-// function LinkedInIcon({ size = 17 }: { size?: number }) {
-//   return (
-//     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
-//       <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-//     </svg>
-//   );
-// }
-
 function GitHubIcon({ size = 17 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
@@ -118,15 +112,6 @@ function GitHubIcon({ size = 17 }: { size?: number }) {
     </svg>
   );
 }
-
-// function EmailIcon({ size = 17 }: { size?: number }) {
-//   return (
-//     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-//       <rect x="2" y="4" width="20" height="16" rx="2" />
-//       <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-//     </svg>
-//   );
-// }
 
 /* ─── Particle Canvas ─── */
 function ParticleCanvas() {
@@ -314,7 +299,7 @@ function Navbar() {
 }
 
 /* ─── Hero ─── */
-const TITLES = ["Data Analyst", "Insights Strategist", "SQL Architect", "Dashboard Engineer"];
+const TITLES = ["Data Analyst", "Applied Geophysicist", "Geospatial", "Data Scientist"];
 
 function Hero() {
   const [titleIdx, setTitleIdx] = useState(0);
@@ -440,9 +425,7 @@ function Hero() {
                 maxWidth: "520px",
               }}
             >
-              I transform complex datasets into strategic intelligence —
-              building the dashboards and models that drive executive decisions
-              and accelerate measurable business growth.
+              Turning data into actionable insights for business, environmental, and geospatial decision-making.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -772,17 +755,13 @@ function About() {
               </div>
             </div>
             <p style={{ ...DM, fontSize: "0.97rem", lineHeight: "1.78", color: "#8892A4", marginBottom: "18px" }}>
-              I am a data storyteller with 5+ years of experience bridging the gap between raw numbers and
-              boardroom-ready intelligence. My work lives at the intersection of technical rigor and strategic
-              thinking — where SQL queries become revenue insights and Python models become competitive advantages.
+              I am a Data Analyst and Applied Geophysicist with experience in data analytics, machine learning, statistical modeling, and geospatial analysis. Through projects in housing markets, air quality monitoring, earthquake damage assessment, customer segmentation, and bankruptcy prediction, I have developed the ability to transform complex datasets into meaningful insights that support business and scientific decision-making.
             </p>
             <p style={{ ...DM, fontSize: "0.97rem", lineHeight: "1.78", color: "#8892A4", marginBottom: "18px" }}>
-              From engineering real-time KPI dashboards to building predictive churn models, I convert complex
-              data landscapes into clear, actionable narratives that drive executive decisions and measurable
-              business outcomes across industries.
+              My background in geophysics and environmental science further enables me to apply data-driven approaches to Earth systems, groundwater exploration, and remote sensing applications.
             </p>
             <p style={{ ...DM, fontSize: "0.97rem", lineHeight: "1.78", color: "#8892A4" }}>
-              When data speaks clearly, leaders act decisively — that is the philosophy behind every analysis I deliver.
+              When data speaks clearly, leaders act decisively that is the philosophy behind every analysis I deliver.
             </p>
             <div className="flex flex-wrap gap-2 mt-7">
               {["Osun, Nigeria", "Open to Remote", "Full-time / Contract"].map((tag) => (
@@ -815,118 +794,85 @@ function About() {
 }
 
 /* ─── Skills ─── */
-const ANALYTICS_SKILLS = [
-  { label: "SQL", pct: 95 },
-  { label: "Python", pct: 90 },
-  { label: "Power BI", pct: 88 },
-  { label: "Excel", pct: 85 },
-  { label: "Tableau", pct: 82 },
-  { label: "Looker", pct: 78 },
+const SKILLS = [
+  {
+    title: "Business Analytics",
+    icon: BarChart2,
+    tags: [
+      "Data Cleaning", "Data Visualization", "Exploratory Data Analysis",
+      "Business Reporting", "Customer Analytics", "Predictive Analytics",
+    ],
+  },
+  {
+    title: "Data Science & Machine Learning",
+    icon: Brain,
+    tags: ["Regression", "Classification", "Clustering", "Feature Engineering", "Model Evaluation"],
+  },
+  {
+    title: "Programming & Visualization",
+    icon: Code,
+    tags: ["Python", "R", "SQL", "Git", "Plotly", "Matplotlib", "Dash", "Streamlit"],
+  },
+  {
+    title: "Geospatial Analytics",
+    icon: Map,
+    tags: ["QGIS", "Remote Sensing", "Satellite Data Analysis", "Environmental Monitoring"],
+  },
 ];
-const ENGINEERING_SKILLS = [
-  { label: "BigQuery", pct: 88 },
-  { label: "ETL Pipelines", pct: 85 },
-  { label: "Data Modeling", pct: 80 },
-  { label: "dbt", pct: 75 },
-  { label: "Airflow", pct: 72 },
-];
-const SOFT_SKILLS = [
-  "Data Storytelling",
-  "Business Acumen",
-  "Stakeholder Communication",
-  "Problem Solving",
-  "Critical Thinking",
-  "Presentation Skills",
-  "Project Leadership",
-  "Cross-functional Collaboration",
-];
-
-function SkillBar({ label, pct, active, color = "#00D4FF" }: { label: string; pct: number; active: boolean; color?: string }) {
-  const [width, setWidth] = useState(0);
-  useEffect(() => {
-    if (!active) return;
-    const t = setTimeout(() => setWidth(pct), 250);
-    return () => clearTimeout(t);
-  }, [active, pct]);
-  return (
-    <div className="mb-5">
-      <div className="flex justify-between mb-2">
-        <span style={{ ...DM, fontSize: "0.9rem", color: "#E8EAF0" }}>{label}</span>
-        <span style={{ ...DM, fontSize: "0.82rem", color: "#8892A4" }}>{pct}%</span>
-      </div>
-      <div style={{ height: "5px", borderRadius: "99px", background: "rgba(255,255,255,0.06)" }}>
-        <div
-          style={{
-            height: "100%",
-            borderRadius: "99px",
-            width: `${width}%`,
-            backgroundColor: color,
-            transition: "width 1.3s cubic-bezier(0.4,0,0.2,1)",
-            boxShadow: `0 0 8px ${color}44`,
-          }}
-        />
-      </div>
-    </div>
-  );
-}
 
 function Skills() {
   const [ref, inView] = useInView();
   return (
     <section id="skills" className="py-24" style={{ backgroundColor: "#0A0E1A" }}>
       <div className="max-w-7xl mx-auto px-6">
-        <SectionTitle title="Skills & Expertise" accent="gold" subtitle="A precision toolkit built across 5+ years of data practice" />
+        <SectionTitle
+          title="Skills & Expertise"
+          accent="gold"
+          subtitle="A precision toolkit built across 5+ years of data practice"
+        />
         <div
           ref={ref}
-          className="grid grid-cols-1 lg:grid-cols-3 gap-7 transition-all duration-700"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-7 transition-all duration-700"
           style={{ opacity: inView ? 1 : 0, transform: inView ? "translateY(0)" : "translateY(28px)" }}
         >
-          <div className="p-7 rounded-2xl" style={{ border: "1px solid rgba(255,255,255,0.08)", background: "rgba(255,255,255,0.04)", backdropFilter: "blur(8px)" }}>
-            <div className="flex items-center gap-3 mb-7">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "rgba(0,212,255,0.1)" }}>
-                <BarChart2 size={18} style={{ color: "#00D4FF" }} />
-              </div>
-              <h3 style={{ ...CG, fontSize: "1.25rem", fontWeight: 600, color: "#E8EAF0" }}>Analytics & Visualization</h3>
-            </div>
-            {ANALYTICS_SKILLS.map((s) => <SkillBar key={s.label} {...s} active={inView} />)}
-          </div>
-
-          <div className="p-7 rounded-2xl" style={{ border: "1px solid rgba(255,255,255,0.08)", background: "rgba(255,255,255,0.04)", backdropFilter: "blur(8px)" }}>
-            <div className="flex items-center gap-3 mb-7">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "rgba(0,212,255,0.1)" }}>
-                <Database size={18} style={{ color: "#00D4FF" }} />
-              </div>
-              <h3 style={{ ...CG, fontSize: "1.25rem", fontWeight: 600, color: "#E8EAF0" }}>Data Engineering</h3>
-            </div>
-            {ENGINEERING_SKILLS.map((s) => <SkillBar key={s.label} {...s} active={inView} color="#00D4FF" />)}
-          </div>
-
-          <div className="p-7 rounded-2xl" style={{ border: "1px solid rgba(255,255,255,0.08)", background: "rgba(255,255,255,0.04)", backdropFilter: "blur(8px)" }}>
-            <div className="flex items-center gap-3 mb-7">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "rgba(240,165,0,0.12)" }}>
-                <Users size={18} style={{ color: "#F0A500" }} />
-              </div>
-              <h3 style={{ ...CG, fontSize: "1.25rem", fontWeight: 600, color: "#E8EAF0" }}>Soft Skills</h3>
-            </div>
-            <div className="flex flex-wrap gap-2.5">
-              {SOFT_SKILLS.map((s) => (
-                <span
-                  key={s}
-                  className="px-3 py-1.5 rounded-full"
-                  style={{
-                    ...DM,
-                    fontSize: "0.8rem",
-                    color: "#E8EAF0",
-                    border: "1px solid rgba(240,165,0,0.32)",
-                    background: "rgba(240,165,0,0.06)",
-                    boxShadow: "0 0 10px rgba(240,165,0,0.07)",
-                  }}
+          {SKILLS.map(({ title, icon: Icon, tags }) => (
+            <div
+              key={title}
+              className="p-7 rounded-2xl"
+              style={{
+                border: "1px solid rgba(255,255,255,0.08)",
+                background: "rgba(255,255,255,0.04)",
+                backdropFilter: "blur(8px)",
+              }}
+            >
+              <div className="flex items-center gap-3 mb-7">
+                <div
+                  className="w-10 h-10 rounded-xl flex items-center justify-center"
+                  style={{ background: "rgba(0,212,255,0.1)" }}
                 >
-                  {s}
-                </span>
-              ))}
+                  <Icon size={18} style={{ color: "#00D4FF" }} />
+                </div>
+                <h3 style={{ ...CG, fontSize: "1.1rem", fontWeight: 600, color: "#E8EAF0" }}>{title}</h3>
+              </div>
+              <div className="flex flex-wrap gap-2.5">
+                {tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1.5 rounded-full"
+                    style={{
+                      ...DM,
+                      fontSize: "0.8rem",
+                      color: "#00D4FF",
+                      border: "1px solid rgba(0,212,255,0.32)",
+                      background: "rgba(0,212,255,0.06)",
+                    }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
@@ -1590,7 +1536,7 @@ export default function App() {
   }, []);
 
   return (
-    <div style={{ ...DM, backgroundColor: "#0A0E1A", minHeight: "100vh" }}>
+    <div style={{ ...DM, backgroundColor: "#0A0E1A", minHeight: "100vh overflow-x-hidden" }}>
       <style>{GLOBAL_STYLES}</style>
       <Navbar />
       <Hero />
